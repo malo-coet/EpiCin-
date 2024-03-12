@@ -1,0 +1,52 @@
+/* Importation of fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Body styles */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center;
+  align-items: center;
+  background: rgb(17, 17, 17); /* Or any color you want as the background */
+  font-family: 'DM Serif Display', serif;
+}
+
+/* h1 styles */
+#epicine-title {
+  font-size: 5em;
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+#rotating-wrapper {
+    animation: rotate 10s linear infinite;
+    display: inline-block; Or flex, depending on layout needs
+    transform-origin: center; /* Ensures rotation around the center */
+}
+
+#rotating-image {
+    width: 10%; /* Adjust max-width as needed */
+    height: auto; /* Maintains aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#rotating-image:hover {
+    transform: scale(1.1); /* Adjust scale value as needed */
+}
