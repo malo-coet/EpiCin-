@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0) url('../img/curtain.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Oswald', serif;
+}
+
+/* h1 styles */
+#epicine-title {
+  font-size: 5em;
+  color: rgb(0, 0, 0);
+  text-shadow: 3px 3px 0px rgba(136, 136, 136, 0.2);
+}
+
+#rotating-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rotating-image {
+  width: 40%;
+  height: auto;
+  animation: rotate 10s linear infinite;
+  transition: transform 0.3s ease;
+  transform: translateY(30px);
+}
+
+#rotating-image:hover {
+  animation: rotate 10s linear infinite, scaleUp 0.3s ease forwards;
+}
